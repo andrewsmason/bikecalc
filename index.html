@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Calc</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/favicon.svg">
+</head>
+<body>
+    <section id="home">
+        <div class="homeHeader">
+            <h1>bike calculator<em id="fontChange">.</em></h1>
+        </div>
+        <div class="homeHero">
+            <img src="img/hero.png" alt="nature">
+        </div>
+        <div class="homeCta">
+            <button class="primaryButton" onclick="displayOptions()">START</button>
+        </div>
+    </section>
+
+    <section id="options">
+        <div class="nav">
+            <a href="index.html"><img src="img/arrow.svg" alt="back"></a>
+        </div>
+        <div class="header">
+            <h1>What do you want to calculate?</h1>
+        </div>
+        <a onclick="displayTimeS1()">
+            <div class="pillsTime">
+                <h3 class="pillsTimeHeader">Time :</h3>
+                <p class="pillsTimeContent">tell us your speed & distance and we’ll estimate your time to complete the ride</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="pillsSpeed">
+                <h3 class="pillsSpeedHeader">Speed :</h3>
+                <p class="pillsSpeedContent">tell us your distance and time and we’ll tell you the avg. speed you need to make it</p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="pillsDistance">
+                <h3 class="pillsDistanceHeader">Distance :</h3>
+                <p class="pillsDistanceContent">tell us the time you’d like to bike for and avg. speed and we’ll figure out the total distance of your ride</p>
+            </div>  
+        </a>
+        <div class="cruisinImg">
+            <img src="img/cruising.png" alt="biker">
+        </div>
+    </section>
+
+    <section id="time-s1">
+        <div class="nav">
+            <a onclick="backToOptions()"><img src="img/arrow.svg"></a>
+        </div>
+        <div class="header">
+            <h1>How far are you biking?</h1>
+        </div>
+        <div class="stepInput">
+            <input type="number" placeholder="miles" id="distanceInput">
+        </div>
+        <div class="stepCTA">
+            <button class="primaryButton" onclick="displayTimeS2()">Next</button>
+        </div>
+    </section>
+
+    <section id="time-s2">
+        <div class="nav">
+            <a onclick="backToTimeS1()"><img src="img/arrow.svg"></a>
+        </div>
+        <div class="header">
+            <h1>How fast do you plan to bike?</h1>
+        </div>
+        <div class="stepInput">
+            <input type="number" placeholder="mph" id="speedInput">
+        </div>
+        <div class="stepCTA">
+            <button class="primaryButton" onclick="displayResults()">Calculate!</button>
+        </div>
+    </section>
+
+    <section id="time-results">
+        <div class="resultsHero">
+            <p class="resultsHeroText">If you maintain an avg. speed of <strong><span id="speed">15</span> mph</strong> you will complete your <strong><span id="distance">25</span> mile</strong> bike ride in:</p>
+        </div>
+        <div class="resultsOutput">
+            <p id="resultsOutput">1 hours and<br>15 minutes</p>
+            <br><br>
+            <a onclick="displayCalculateAgain()"><img src="img/tertiary-button.svg" alt="button" class="resultsTertiaryButton"></a>
+        </div>
+    </section>
+
+<script src="app.js"></script>
+</body>
+</html>
