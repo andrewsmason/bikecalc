@@ -1,2 +1,5 @@
 # bikecalc
-## simple bike calc app
+### Calculate:
+- time to complete a ride
+- avg speed
+- distance
