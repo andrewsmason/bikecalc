@@ -1,6 +1,7 @@
 // GLOBAL VARIABLES
 let distance;
 let speed;
+let time;
 
 // CALCULATING ESTIMATED TIME TO COMPLETE
 function calculateTime(distance, speed) {
@@ -27,8 +28,18 @@ function calculateTime(distance, speed) {
     return totalInHoursAndMinutes;
 }
 
+// CALCULATING SPEED TO COMPLETE
+function calculateSpeed(distance, time) {
+    let milesPerMinute = distance / time;
+    let milesPerHour = Math.floor(milesPerMinute * 60);
+
+    return `${milesPerHour} mph`;
+}
+
 // DISPLAYING, GATHERING INPUTS, AND CALCULATING
 // displaying elements, capturing speed and distance, and calculating results!
+
+// calcuate time
 function displayOptions() {
     document.getElementById("home").style.display = "none";
     document.getElementById("options").style.display = "block";
@@ -39,13 +50,13 @@ function displayTimeS1() {
     document.getElementById("time-s1").style.display = "block";
 }
 
-function backToOptions() {
+function backToOptionsTime() {
     document.getElementById("time-s1").style.display = "none";
     document.getElementById("options").style.display = "block";
 }
 
 function displayTimeS2() {
-    distance = document.getElementById("distanceInput").value;
+    distance = document.getElementById("distanceInputTime").value;
     document.getElementById("time-s1").style.display = "none";
     document.getElementById("time-s2").style.display = "block";
 }
@@ -55,16 +66,53 @@ function backToTimeS1() {
     document.getElementById("time-s1").style.display = "block";   
 }
 
-function displayResults() {
-    speed = document.getElementById("speedInput").value;
+function displayResultsTime() {
+    speed = document.getElementById("speedInputTime").value;
     document.getElementById("time-s2").style.display = "none"; 
     document.getElementById("time-results").style.display = "block";
-    document.getElementById("speed").innerHTML = speed;
-    document.getElementById("distance").innerHTML = distance;
-    document.getElementById("resultsOutput").innerHTML = calculateTime(distance, speed);
+    document.getElementById("speedTimeResults").innerHTML = speed;
+    document.getElementById("distanceTimeResults").innerHTML = distance;
+    document.getElementById("resultsOutputTime").innerHTML = calculateTime(distance, speed);
 }
 
-function displayCalculateAgain() {
+function displayCalculateAgainTime() {
     document.getElementById("time-results").style.display = "none";
+    document.getElementById("options").style.display = "block";
+}
+
+// calculate speed
+
+function displaySpeedS1() {
+    document.getElementById("options").style.display = "none";
+    document.getElementById("speed-s1").style.display = "block";
+}
+
+function backToOptionsSpeed() {
+    document.getElementById("speed-s1").style.display = "none";
+    document.getElementById("options").style.display = "block";
+}
+
+function displaySpeedS2() {
+    distance = document.getElementById("distanceInputSpeed").value;
+    document.getElementById("speed-s1").style.display = "none";
+    document.getElementById("speed-s2").style.display = "block";
+}
+
+function backToSpeedS1() {
+    document.getElementById("speed-s2").style.display = "none"; 
+    document.getElementById("speed-s1").style.display = "block";   
+}
+
+function displayResultsSpeed() {
+    time = document.getElementById("timeInput").value;
+    document.getElementById("speed-s2").style.display = "none"; 
+    document.getElementById("speed-results").style.display = "block";
+    document.getElementById("distanceSpeedResults").innerHTML = distance;
+    document.getElementById("timeSpeedResults").innerHTML = time;
+    document.getElementById("resultsOutputSpeed").innerHTML = calculateSpeed(distance, time);
+}
+
+function displayCalculateAgainSpeed() {
+    document.getElementById("speed-results").style.display = "none";
     document.getElementById("options").style.display = "block";
 }

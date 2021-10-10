@@ -34,7 +34,7 @@
                 <p class="pillsTimeContent">tell us your speed & distance and we’ll estimate your time to complete the ride</p>
             </div>
         </a>
-        <a href="#">
+        <a onclick="displaySpeedS1()">
             <div class="pillsSpeed">
                 <h3 class="pillsSpeedHeader">Speed :</h3>
                 <p class="pillsSpeedContent">tell us your distance and time and we’ll tell you the avg. speed you need to make it</p>
@@ -53,13 +53,13 @@
 
     <section id="time-s1">
         <div class="nav">
-            <a onclick="backToOptions()"><img src="img/arrow.svg"></a>
+            <a onclick="backToOptionsTime()"><img src="img/arrow.svg"></a>
         </div>
         <div class="header">
             <h1>How far are you biking?</h1>
         </div>
         <div class="stepInput">
-            <input type="number" placeholder="miles" id="distanceInput">
+            <input type="number" placeholder="miles" id="distanceInputTime">
         </div>
         <div class="stepCTA">
             <button class="primaryButton" onclick="displayTimeS2()">Next</button>
@@ -74,21 +74,62 @@
             <h1>How fast do you plan to bike?</h1>
         </div>
         <div class="stepInput">
-            <input type="number" placeholder="mph" id="speedInput">
+            <input type="number" placeholder="mph" id="speedInputTime">
         </div>
         <div class="stepCTA">
-            <button class="primaryButton" onclick="displayResults()">Calculate!</button>
+            <button class="primaryButton" onclick="displayResultsTime()">Calculate!</button>
         </div>
     </section>
 
     <section id="time-results">
         <div class="resultsHero">
-            <p class="resultsHeroText">If you maintain an avg. speed of <strong><span id="speed">15</span> mph</strong> you will complete your <strong><span id="distance">25</span> mile</strong> bike ride in:</p>
+            <p class="resultsHeroText">If you maintain an avg. speed of <strong><span id="speedTimeResults">15</span> mph</strong> you will complete your <strong><span id="distanceTimeResults">25</span> mile</strong> bike ride in:</p>
         </div>
         <div class="resultsOutput">
-            <p id="resultsOutput">1 hours and<br>15 minutes</p>
+            <p id="resultsOutputTime">1 hours and<br>15 minutes</p>
             <br><br>
-            <a onclick="displayCalculateAgain()"><img src="img/tertiary-button.svg" alt="button" class="resultsTertiaryButton"></a>
+            <a onclick="displayCalculateAgainTime()"><img src="img/tertiary-button.svg" alt="button" class="resultsTertiaryButton"></a>
+        </div>
+    </section>
+
+    <section id="speed-s1">
+        <div class="nav">
+            <a onclick="backToOptionsSpeed()"><img src="img/arrow.svg"></a>
+        </div>
+        <div class="header">
+            <h1>How far are you biking?</h1>
+        </div>
+        <div class="stepInput">
+            <input type="number" placeholder="miles" id="distanceInputSpeed">
+        </div>
+        <div class="stepCTA">
+            <button class="primaryButton" onclick="displaySpeedS2()">Next</button>
+        </div>
+    </section>
+
+    <section id="speed-s2">
+        <div class="nav">
+            <a onclick="backToSpeedS1()"><img src="img/arrow.svg"></a>
+        </div>
+        <div class="header">
+            <h1 id="testOutput">How long do you plan to bike?</h1>
+        </div>
+        <div class="stepInput">
+            <input type="number" placeholder="minutes" id="timeInput">
+        </div>
+        <div class="stepCTA">
+            <button class="primaryButton" onclick="displayResultsSpeed()">Calculate!</button>
+        </div>
+    </section>
+
+    <section id="speed-results">
+        <div class="resultsHero">
+            <p class="resultsHeroText">To complete a <strong><span id="distanceSpeedResults">25</span> mile</strong> bike ride in <strong><span id="timeSpeedResults">50</span> minutes</strong> you will need to bike at a speed of:</p>
+        </div>
+        <div class="resultsOutput">
+            <p id="resultsOutputSpeed">25 mph</p>
+            <br><br>
+            <a onclick="displayCalculateAgainSpeed()"><img src="img/tertiary-button.svg" alt="button" class="resultsTertiaryButton"></a>
         </div>
     </section>
 
