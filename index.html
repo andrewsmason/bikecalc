@@ -40,7 +40,7 @@
                 <p class="pillsSpeedContent">tell us your distance and time and we’ll tell you the avg. speed you need to make it</p>
             </div>
         </a>
-        <a href="#">
+        <a onclick="displayDistanceS1()">
             <div class="pillsDistance">
                 <h3 class="pillsDistanceHeader">Distance :</h3>
                 <p class="pillsDistanceContent">tell us the time you’d like to bike for and avg. speed and we’ll figure out the total distance of your ride</p>
@@ -130,6 +130,47 @@
             <p id="resultsOutputSpeed">25 mph</p>
             <br><br>
             <a onclick="displayCalculateAgainSpeed()"><img src="img/tertiary-button.svg" alt="button" class="resultsTertiaryButton"></a>
+        </div>
+    </section>
+
+    <section id="distance-s1">
+        <div class="nav">
+            <a onclick="backToOptionsDistance()"><img src="img/arrow.svg"></a>
+        </div>
+        <div class="header">
+            <h1 id="testOutput">How long do you plan to bike?</h1>
+        </div>
+        <div class="stepInput">
+            <input type="number" placeholder="minutes" id="timeInputDistance">
+        </div>
+        <div class="stepCTA">
+            <button class="primaryButton" onclick="displayDistanceS2()">Next</button>
+        </div>
+    </section>
+
+    <section id="distance-s2">
+        <div class="nav">
+            <a onclick="backToDistanceS1()"><img src="img/arrow.svg"></a>
+        </div>
+        <div class="header">
+            <h1>How fast do you plan to bike?</h1>
+        </div>
+        <div class="stepInput">
+            <input type="number" placeholder="mph" id="speedInputDistance">
+        </div>
+        <div class="stepCTA">
+            <button class="primaryButton" onclick="displayResultsDistance()">Calculate!</button>
+        </div>
+    </section>
+
+    <section id="distance-results">
+        <div class="resultsHero">
+            <p class="resultsHeroText">If you bike for <strong><span id="timeDistanceResults">50</span> min</strong> at an average speed of <strong><span id="speedDistanceResults">12</span> mph</strong> you will travel a total distance of:</p>
+        </div>
+        <div class="resultsOutput">
+            <p id="resultsOutputDistance">25 miles</p>
+            <br><br>
+            <a onclick="displayCalculateAgainDistance()"><img src="img/tertiary-button.svg" alt="button" class="resultsTertiaryButton"></a>
         </div>
     </section>
 

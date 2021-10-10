@@ -28,6 +28,18 @@
     display: none;
 }
 
+#distance-s1 {
+    display: none;
+}
+
+#distance-s2 {
+    display: none;
+}
+
+#distance-results {
+    display: none;
+}
+
 /* global stuff */
 h1 {
     font-size: 35px;
@@ -359,6 +371,19 @@ input::placeholder {
 }
 
 #resultsOutputSpeed {
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 55px;
+    line-height: 64px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
+    color: #FFFFFF;
+}
+
+#resultsOutputDistance {
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: 200;

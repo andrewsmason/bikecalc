@@ -36,6 +36,14 @@ function calculateSpeed(distance, time) {
     return `${milesPerHour} mph`;
 }
 
+// CALCULATING TOTAL DISTANCE TRAVELED
+function calculateDistance(speed, time) {
+    let milesPerMinute = speed / 60;
+    let distanceTraveled = milesPerMinute * time;
+
+    return `${distanceTraveled} miles`;
+}
+
 // DISPLAYING, GATHERING INPUTS, AND CALCULATING
 // displaying elements, capturing speed and distance, and calculating results!
 
@@ -114,5 +122,41 @@ function displayResultsSpeed() {
 
 function displayCalculateAgainSpeed() {
     document.getElementById("speed-results").style.display = "none";
+    document.getElementById("options").style.display = "block";
+}
+
+// calculate distance
+function displayDistanceS1() {
+    document.getElementById("options").style.display = "none";
+    document.getElementById("distance-s1").style.display = "block";
+}
+
+function backToOptionsDistance() {
+    document.getElementById("distance-s1").style.display = "none";
+    document.getElementById("options").style.display = "block";
+}
+
+function displayDistanceS2() {
+    time = document.getElementById("timeInputDistance").value;
+    document.getElementById("distance-s1").style.display = "none";
+    document.getElementById("distance-s2").style.display = "block";
+}
+
+function backToDistanceS1() {
+    document.getElementById("distance-s2").style.display = "none"; 
+    document.getElementById("distance-s1").style.display = "block";   
+}
+
+function displayResultsDistance() {
+    speed = document.getElementById("speedInputDistance").value;
+    document.getElementById("distance-s2").style.display = "none"; 
+    document.getElementById("distance-results").style.display = "block";
+    document.getElementById("timeDistanceResults").innerHTML = time;
+    document.getElementById("speedDistanceResults").innerHTML = speed;
+    document.getElementById("resultsOutputDistance").innerHTML = calculateDistance(speed, time);
+}
+
+function displayCalculateAgainDistance() {
+    document.getElementById("distance-results").style.display = "none";
     document.getElementById("options").style.display = "block";
 }
