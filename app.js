@@ -39,7 +39,7 @@ function calculateSpeed(distance, time) {
 // CALCULATING TOTAL DISTANCE TRAVELED
 function calculateDistance(speed, time) {
     let milesPerMinute = speed / 60;
-    let distanceTraveled = milesPerMinute * time;
+    let distanceTraveled = Math.ceil(milesPerMinute * time);
 
     return `${distanceTraveled} miles`;
 }
